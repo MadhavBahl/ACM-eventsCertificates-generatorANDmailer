@@ -1,0 +1,25 @@
+{
+  "name": "acm-eventcertificates",
+  "version": "1.0.0",
+  "description": "ACM Events Certificates AI and GAE\r ----------------------------------\r A node script to print names of all participants on a certificate template, \r ACM event's artificial intelligence, and Google App Engine.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MadhavBahlMD/ACM-eventsCertificates-AI-GAE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MadhavBahlMD/ACM-eventsCertificates-AI-GAE/issues"
+  },
+  "homepage": "https://github.com/MadhavBahlMD/ACM-eventsCertificates-AI-GAE#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "gm": "^1.23.0",
+    "jimp": "^0.2.28"
+  }
+}

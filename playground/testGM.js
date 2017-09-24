@@ -26,9 +26,9 @@ var str = 'Madhav Bahl';
 var x = 300;
 var y = 487;
 
-Jimp.read("ai.png", function (err, image) {
+Jimp.read("./playground/ai.png", function (err, image) {
   Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).then(function (font) { // load font from .fnt file
-      image.print(font, x, y, str).write("aiOut.jpg");        // print a message on an image
+      image.print(font, x, y, str).write("./playground/aiOut.jpg");        // print a message on an image
   });
 });
 

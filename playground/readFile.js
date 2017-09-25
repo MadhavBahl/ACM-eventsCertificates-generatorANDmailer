@@ -13,9 +13,17 @@ const fs = require('fs');
 fs.readFile('participants.json',(err,data) => {
   if(err) return console.log(err);
   var dataObj = JSON.parse(data);
+  var printObj =[];
   var len = dataObj.length;
   console.log(len);
   for(let i=0;i<len;i++) {
-    console.log(dataObj[i].Name.split(" ")[0] + " " +  dataObj[i].Name.split(" ")[1]);
+    if(dataObj[i].Name.split(" ")[1]){
+      printObj.push(dataObj[i].Name.split(" ")[0] + " " +  dataObj[i].Name.split(" ")[1]);
+      console.log(printObj[i]);
+    }
+    else {
+      printObj.push(dataObj[i].Name.split(" ")[0]);
+      console.log(printObj[i]);
+    }
   }
 });

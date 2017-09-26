@@ -4,7 +4,8 @@ const fs = require('fs');
 var x = 310;
 var lgX = 283;
 var xlX = 250;
-var smX = 345;
+var xxlX = 235;
+var smX = 355;
 var y = 487;
 
 fs.readFile('participants.json',(err,data) => {
@@ -26,19 +27,28 @@ fs.readFile('participants.json',(err,data) => {
       Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).then(function (font) { // load font from .fnt file
         if(printObj[i].length < 14 && printObj[i].length > 6){
           console.log(printObj[i].length);
-          image.print(font, x, y, printObj[i]).write("./certificates/aiOut"+ i + ".jpg");        // print a message on an image
+          let printS = printObj[i].toString().toUpperCase();
+          image.print(font, x, y, printS).write("./certificates/aiOut"+ i + ".jpg");        // print a message on an image
         }
         else if(printObj[i].length >= 20){
           console.log(printObj[i].length);
-          image.print(font, xlX , y, printObj[i]).write("./certificates/aiOut"+ i + ".jpg");
+          let printS = printObj[i].toString().toUpperCase();
+          image.print(font, xxlX , y, printS).write("./certificates/aiOut"+ i + ".jpg");
         }
-        else if(printObj[i].length >= 14 && printObj[i].length < 20){
+        else if(printObj[i].length >= 16 && printObj[i].length < 20){
           console.log(printObj[i].length);
-          image.print(font, lgX , y, printObj[i]).write("./certificates/aiOut"+ i + ".jpg");
+          let printS = printObj[i].toString().toUpperCase();
+          image.print(font, xlX , y, printS).write("./certificates/aiOut"+ i + ".jpg");
+        }
+        else if(printObj[i].length >= 14 && printObj[i].length < 16){
+          console.log(printObj[i].length);
+          let printS = printObj[i].toString().toUpperCase();
+          image.print(font, lgX , y, printS).write("./certificates/aiOut"+ i + ".jpg");
         }
         else if(printObj[i].length <= 6){
           console.log(printObj[i].length);
-          image.print(font, smX , y, printObj[i]).write("./certificates/aiOut"+ i + ".jpg");
+          let printS = printObj[i].toString().toUpperCase();
+          image.print(font, smX , y, printS).write("./certificates/aiOut"+ i + ".jpg");
         }
 
       });

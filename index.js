@@ -23,32 +23,32 @@ fs.readFile('participants.json',(err,data) => {
       printObj.push(dataObj[i].Name.split(" ")[0]);
       console.log(printObj[i]);
     }
-    Jimp.read("ai.png", function (err, image) {
+    Jimp.read("base.png", function (err, image) {
       Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).then(function (font) { // load font from .fnt file
         if(printObj[i].length < 14 && printObj[i].length > 6){
           console.log(printObj[i].length);
           let printS = printObj[i].toString().toUpperCase();
-          image.print(font, x, y, printS).write("./certificates/aiOut"+ i + ".jpg");        // print a message on an image
+          image.print(font, x, y, printS).write("./certificates/op"+ i + ".jpg");        // print a message on an image
         }
         else if(printObj[i].length >= 20){
           console.log(printObj[i].length);
           let printS = printObj[i].toString().toUpperCase();
-          image.print(font, xxlX , y, printS).write("./certificates/aiOut"+ i + ".jpg");
+          image.print(font, xxlX , y, printS).write("./certificates/op"+ i + ".jpg");
         }
         else if(printObj[i].length >= 16 && printObj[i].length < 20){
           console.log(printObj[i].length);
           let printS = printObj[i].toString().toUpperCase();
-          image.print(font, xlX , y, printS).write("./certificates/aiOut"+ i + ".jpg");
+          image.print(font, xlX , y, printS).write("./certificates/op"+ i + ".jpg");
         }
         else if(printObj[i].length >= 14 && printObj[i].length < 16){
           console.log(printObj[i].length);
           let printS = printObj[i].toString().toUpperCase();
-          image.print(font, lgX , y, printS).write("./certificates/aiOut"+ i + ".jpg");
+          image.print(font, lgX , y, printS).write("./certificates/op"+ i + ".jpg");
         }
         else if(printObj[i].length <= 6){
           console.log(printObj[i].length);
           let printS = printObj[i].toString().toUpperCase();
-          image.print(font, smX , y, printS).write("./certificates/aiOut"+ i + ".jpg");
+          image.print(font, smX , y, printS).write("./certificates/op"+ i + ".jpg");
         }
 
       });

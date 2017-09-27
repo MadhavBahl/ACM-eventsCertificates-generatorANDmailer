@@ -4,8 +4,8 @@ var fs = require('fs');
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'outreach.acmvit@gmail.com',
-    pass: '********'
+    user: 'out_____vit@gmail.com',
+    pass: '*********'
   }
 });
 
@@ -15,6 +15,7 @@ fs.readFile('participants.json',(err,data) => {
     var dataObj = JSON.parse(data);
     var len = dataObj.length;
     console.log(len);
+
 
     for(var i=0; i<len; i++) {
 
@@ -26,10 +27,9 @@ fs.readFile('participants.json',(err,data) => {
 
       var send = `Dear ${currentObj.Name} (${currentObj.RegNo}),
 
+Thank you for participating in ACM Workshop.
+You can find your participation certificate at http://___EnterYourUrlHere___/Out${i}.jpg
 Greetings from ACM VIT!
-Thank you for participating in Artificial Intelligence Workshop held on 17-09-2017.
-You can find your participation certificate at http://events.vit.hosting.acm.org/ai2017/certificates/aiOut${i}.jpg
-
 Regards,
 Hardika Goyal
 (Managing Director, ACM VITU)
@@ -38,7 +38,7 @@ http://acmvit.in`;
       var mailOptions = {
         from: 'outreach.acmvit@gmail.com',
         to: currentObj.email,
-        subject: 'Artificial Intelligence Workshop Certificate',
+        subject: 'Workshop Certificate',
         text: send
       };
 
@@ -48,7 +48,7 @@ http://acmvit.in`;
         } else {
           dataObj[i].emailSent = 'Yes';
           fs.writeFile('participants.json', JSON.stringify(dataObj,undefined,2), function (err) {
-            if (err) return console.log(err);
+            if (err) return console.log('Data not saved!!!!!');
             console.log('Data was saved!!');
           });
           console.log('Mail was sent to',info);

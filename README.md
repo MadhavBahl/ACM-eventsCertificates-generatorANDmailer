@@ -19,12 +19,13 @@ Basic info
 How To Use?
 
 1. Install the required node modules using " npm install "
-2. Keep the certificate template as "base.png" (preferably 1200x800) and participants list as participants.json with Name and email fields in the root directory.
+2. Keep the certificate template as "base.png" (preferably, 800x1200) and participants list as participants.json with Name and email fields in the root directory.
+
+// ======= If not (800x1200) run node resize.js ======= //
+
 3. Run index script using >> node index.js
 4. The certificates will be generated in /certificates/
 5. Host the certificates on a shared hosting to get url
 6. Replace the url with the url where the certificates are hosted
 7. Run email.js using >> node email.js and mail will be sent to the participants.
 8. DONE :)
-
-

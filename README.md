@@ -1,5 +1,5 @@
-ACM Events Certificates AI and GAE
-----------------------------------
+Chapter Events Certificate Generator and Mailer
+-----------------------------------------------
 A node script to print names of all participants on a certificate template,
 and mail them to students using nodemailer.
 
